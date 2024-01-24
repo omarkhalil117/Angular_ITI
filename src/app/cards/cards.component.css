@@ -1,0 +1,19 @@
+.row{
+    
+}
+
+.card{
+    width: 30%;
+    height: 200px;
+    margin: 20px;
+  
+}
+
+.card:nth-child(odd){
+    background-color: cornflowerblue;
+}
+
+.card:nth-child(even){
+    background-color: dimgrey;
+}
+
