@@ -12,12 +12,13 @@ export class SearchComponent {
 
   email :string ='';
 
+  // event to send value to wrapper component
   @Output() sendToParent = new EventEmitter<string>()
 
+  // send value to wrapper
   getVal(st : string):void
   {
       this.email = st;
-      console.log(this.email)
       this.sendToParent.emit(st);
   }
 

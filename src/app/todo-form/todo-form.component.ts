@@ -11,11 +11,13 @@ import { ListComponent } from '../list/list.component';
 })
 export class TodoFormComponent {
   
-   @Output() sendToParent = new EventEmitter<string>();
+   // define custom event for the component 
+   @Output() sendNewItem = new EventEmitter<string>();
 
+   // Send item name from text field to wrapper component
    addItem(newItem :string)
    {
-    this.sendToParent.emit(newItem);
+    this.sendNewItem.emit(newItem);
    }
 
 }

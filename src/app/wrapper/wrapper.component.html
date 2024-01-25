@@ -1,4 +1,6 @@
 
-<app-todo-form (sendToParent)="updateList($event)"></app-todo-form>
+<!-- Form Component -->
+<app-todo-form (sendNewItem)="updateList($event)"></app-todo-form>
 
+<!-- list Component -->
 <app-list (sendDeleted)="delFromList($event)" [ListItems]="items" ></app-list>

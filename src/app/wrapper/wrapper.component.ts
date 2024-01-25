@@ -10,13 +10,17 @@ import { ListComponent } from '../list/list.component';
   styleUrl: './wrapper.component.css'
 })
 export class WrapperComponent {
+   
+    // initiate empty list
     items : string[] = [];
 
+    // push data to list
     updateList(newItem : string):void
     {
       this.items.push(newItem);
     }
 
+    // delete element from list 
     delFromList(delItem:string):void
     {
       console.log(this.items);
