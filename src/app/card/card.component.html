@@ -1,1 +1,20 @@
-<p>card works!</p>
+<div class="card h-100">
+
+    <img [src]="getUser.image" class="card-img-top" alt="{{getUser.username}}">
+
+    <div class="card-body">
+      <!-- Info -->
+      <h5 class="card-title">{{getUser.username}}</h5>
+      <p class="card-text">{{getUser.email}}</p>
+      <p class="card-text">{{getUser.phone}}</p>
+
+      <!-- Users Info -->
+      @if(getUser.is_verified)
+      {
+        <div>
+            <p class="d-inline text-success ">Verified</p>
+            <i class="fa-solid fa-check d-inline mx-2 text-bg-success "></i>
+        </div>
+      }
+    </div>
+</div>

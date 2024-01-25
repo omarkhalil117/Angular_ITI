@@ -1,1 +1,14 @@
-<p>cards works!</p>
+<div class="container">
+
+    <h1 class="text-center "> Users </h1>
+
+    <app-search (sendToParent)="receiveFromChild($event)"></app-search>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @for(user of users ; track user.id)
+        {
+            <app-card [getUser]="user" ></app-card>
+        }
+    </div>
+    
+</div>
