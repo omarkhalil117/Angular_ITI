@@ -250,10 +250,17 @@ export class CardsComponent {
         "is_verified": false
       }
     ];
+
     receiveFromChild(email : string) {
       if(email != '')
       {
-        this.users = this.users.filter((user : any) => user.email == email);
+        this.users = this.users.filter(
+          (user : any) => user.email.toLowerCase().indexOf(email)> -1);
       }
+    }
+
+    refreshPage() : void
+    {
+       window.location.reload();
     }
 }

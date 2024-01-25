@@ -4,7 +4,14 @@
 
     <app-search (sendToParent)="receiveFromChild($event)"></app-search>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+     @if(users.length !== 20)
+     {
+        <div class="container text-center ">
+            <p>Reuslt : {{users.length}} User</p>
+            <button class="btn btn-outline-success m-auto  " (click)="refreshPage()">Refresh</button>
+        </div>
+     }
+    <div class="row row-cols-1 row-cols-md-3 g-4 p-5">
         @for(user of users ; track user.id)
         {
             <app-card [getUser]="user" ></app-card>
