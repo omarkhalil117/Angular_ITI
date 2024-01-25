@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { AboutMeComponent } from './about-me/about-me.component';
@@ -15,6 +15,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit{
+  @ViewChild('par')
+  titleRef!: ElementRef;
   title = 'angular-first-app';
+  
+  ngAfterViewInit(): void {
+    this.titleRef.nativeElement.innerText = "from ngAfter";
+  }
+
 }
