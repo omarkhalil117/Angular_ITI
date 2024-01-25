@@ -1,9 +1,9 @@
 <div class="container text-center ">
     @for(el of ListItems ; track $index)
     {
-        <p class="fs-3 d-block " #item>{{el}}</p>
+        <p class="fs-3 d-block " #item [ngClass]=" status ? 'decorated' : 'undecorated'">{{el}}</p>
         <button class="btn btn-danger m-3" (click)="delItem(item.innerHTML)">Delete</button>
         <button class="btn btn-success m-3 " 
-        (click)="item.style.textDecoration = 'line-through'">Check</button>
+        (click)="toggle()">Check</button>
     }
 </div>

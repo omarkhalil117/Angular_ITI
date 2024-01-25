@@ -1,0 +1,7 @@
+.decorated{
+    text-decoration: line-through;
+}
+
+.undecorated{
+    text-decoration: none;
+}
