@@ -1,0 +1,21 @@
+<div class="col mb-3 d-flex align-items-stretch text-center fs-3 ">
+
+    <div class="card">
+        <img class="card-img" src="{{cardItem?.images?.at(0)}}" >
+        
+        <a class="text-decoration-none " (click)="redirectToItemPage(cardItem?.id)"> {{cardItem?.title}}</a>
+        <p>{{cardItem?.category}}</p>
+        <p>{{cardItem?.brand}}</p>
+
+        @if(cardItem?.stock ==  0 )
+        {
+            <p class="text-danger">out of Stock</p>
+        }
+        @else {
+            <p class="text-success">In Stock</p>
+        }
+    </div>
+
+
+
+</div>
