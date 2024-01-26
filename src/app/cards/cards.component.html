@@ -1,29 +1,11 @@
-<div class="row p-5">
+<div class="container">
 
-    <h1 class="text-center fw-bold ">Portofolio</h1>
-
-    <div class="col-4 card text-center fs-3">Example accordion 
-        <p>Lorem ipsum dolor sit amet.</p>
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        
+        @for(item of items ; track item.id)
+        {
+            <app-card [cardItem]="item" ></app-card>
+        }
     </div>
-
-    <div class="col-4 card text-center fs-3 ">Example 
-        <p>Lorem ipsum dolor sit amet.</p>
-    </div>
-
-    <div class="col-4 card text-center fs-3 ">Example 
-        <p>Lorem ipsum dolor sit amet.</p>
-    </div>
-
-    <div class="col-4 card text-center fs-3 ">Example 
-        <p>Lorem ipsum dolor sit amet.</p>
-    </div>
-
-    <div class="col-4 card text-center fs-3 ">Example 
-        <p>Lorem ipsum dolor sit amet.</p>
-    </div>
-
-    <div class="col-4 card text-center fs-3 ">Example 
-        <p>Lorem ipsum dolor sit amet.</p>
-    </div>
-
+    
 </div>
