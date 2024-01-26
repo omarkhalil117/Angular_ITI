@@ -19,10 +19,7 @@ export class Comp1Component {
   @Output() fromComp1 = new EventEmitter<string>();
 
 
-  ngOnChanges(changes : SimpleChange)
-  {
-      this.data = this.txtFromComp2;
-  }
+
 
 
   updateData(update:string)
