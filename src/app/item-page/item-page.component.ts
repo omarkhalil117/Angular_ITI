@@ -1,10 +1,11 @@
 import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
 import { Item } from '../interfaces/item';
+import { StarRateComponent } from '../star-rate/star-rate.component';
 
 @Component({
   selector: 'app-item-page',
   standalone: true,
-  imports: [],
+  imports: [StarRateComponent],
   templateUrl: './item-page.component.html',
   styleUrl: './item-page.component.css'
 })
