@@ -13,10 +13,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-
-
   title = 'angular-first-app';
-  
-
 
 }
