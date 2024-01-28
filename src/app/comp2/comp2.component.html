@@ -5,8 +5,10 @@
     <input class="mt-3 " type="text" #comp2Txt placeholder="Enter Text c2" 
     (input)="sendTxt2(comp2Txt.value)"
     value="{{data}}">
-
+    <p>From service {{fromService}}</p>
     <h1>Using NgModel</h1>
     <input type="text" placeholder="Enter Data here" [(ngModel)]="ngText">
-    <p>{{ngText}}</p>
+    <input type="text" placeholder="Enter Data here" [value]="ngText" [(ngModel)]="ngText">
+
+    
 </div>

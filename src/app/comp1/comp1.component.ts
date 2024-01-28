@@ -12,6 +12,7 @@ export class Comp1Component {
   
   data:string = '';
 
+  condition:boolean = true ;
 
   @Input() txtFromComp2:any;
   
@@ -41,4 +42,9 @@ export class Comp1Component {
     console.log(this.data);
   }
 
+  toggleCondition()
+  {
+    this.condition = ! this.condition ;
+    console.log(this.condition)
+  }
 }

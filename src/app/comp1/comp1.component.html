@@ -4,4 +4,20 @@
     (fromComp2)="recieveComp2($event)"
     (input)="sendTxt1(comp1Txt.value)" >
 
+
+
+        @if(condition)
+        {
+            <div>
+             <p>condition is true</p>
+            </div>
+        }
+        @else {
+            <div>
+                <p>condition is false</p>
+            </div>
+        }
+    
+
+    <button class="btn btn-primary " (click)="toggleCondition()"> Toggle btn</button>
 </div>
