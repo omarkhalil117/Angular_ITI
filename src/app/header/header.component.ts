@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { ProductsService } from '../services/products.service';
 
 
 
@@ -11,29 +12,19 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-      Myname : string = "Omar";
-      imag: string = "./assets/photo-1545665277-5937489579f2.avif";
-      myAlert(name:string)
-      {
-        alert("My name is " + name)
-      }
+
+      cartCount!:number ;
+      constructor(private count: ProductsService , 
+         private router : Router){}
 
       ngOnInit()
       {
-         // start of load
-         // Ex: fetch api
+         this.count.getProductsCount().subscribe((c:number)=> this.cartCount = c)
       }
 
-      ngDoCheck()
+      ReirectToShoppingCart()
       {
-         // check for changes
-
-      }
-
-      ngOnDestroy()
-      {
-         // clean up method
-         // Ex : stop
+         this.router.navigate(['Usercart']);
       }
   
 }

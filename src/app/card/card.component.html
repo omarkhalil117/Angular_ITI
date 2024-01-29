@@ -1,19 +1,27 @@
 <div class="col mb-3 d-flex align-items-stretch text-center fs-3 ">
 
-    <div class="card">
+    <div class="card p-3">
         <img class="card-img" src="{{cardItem?.images?.at(0)}}" >
         
-        <a class="text-decoration-none " (click)="redirectToItemPage(cardItem?.id)"> {{cardItem?.title}}</a>
-        <p>{{cardItem?.category}}</p>
-        <p>{{cardItem?.brand}}</p>
+        <p class="text-primary  fs-4 m-3"> {{cardItem?.title}}</p>
+        <p class="fs-6">Category: {{cardItem?.category}}</p>
+        <p class="fs-6">Brand: {{cardItem?.brand}}</p>
 
         @if(cardItem?.stock ==  0 )
         {
-            <p class="text-danger">out of Stock</p>
+            <p class="text-white  position-absolute m-1 bg-danger  border-1 rounded-3  fs-6 p-1">out of Stock</p>
         }
         @else {
-            <p class="text-success">In Stock</p>
+            <p class="text-white  position-absolute m-1 bg-success border-1 rounded-3  fs-6 p-1">In Stock</p>
         }
+
+        <app-star-rate [rating]="cardItem?.rating"></app-star-rate>
+
+        <div class="d-flex justify-content-between  align-items-center ">
+            <button class="btn btn-primary" (click)="redirectToItemPage(cardItem!.id)">Details</button>
+            <button class="btn btn-dark  " (click)="addItemtocart(cardItem!.id)">Add To Cart</button>
+        </div>
+
     </div>
 
 

@@ -5,6 +5,7 @@ import { ItemPageComponent } from './item-page/item-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 export const routes: Routes = [
     {
@@ -36,6 +37,11 @@ export const routes: Routes = [
         path: "cart",
         component: CartPageComponent,
         title: "Item Page"
+    },
+    {
+        path: "Usercart",
+        component: ShoppingCartComponent,
+        title: "Shoping Cart Page"
     },
     {
         path: '**',
