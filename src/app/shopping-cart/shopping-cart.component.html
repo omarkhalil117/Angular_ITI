@@ -46,7 +46,7 @@
                         <h6 class="mb-0">$ {{cartItem.price}}</h6>
                       </div>
                       <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                        <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
+                        <a (click)="removeItem(cartItem.id)" class="text-muted"><i class="fas fa-times"></i></a>
                       </div>
                     </div>
   
@@ -54,7 +54,7 @@
 
   
                     <div class="pt-5">
-                      <h6 class="mb-0"><a href="#!" class="text-body"><i
+                      <h6 class="mb-0"><a routerLink="/" routerLinkActive="active_link" class="text-body"><i
                             class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
                     </div>
                   </div>

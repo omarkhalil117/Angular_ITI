@@ -1,29 +1,57 @@
-<div class="col mb-3 d-flex align-items-stretch text-center fs-3 ">
+<div class="col mb-3 d-flex align-items-stretch text-center fs-3 mx-auto ">
 
-    <div class="card p-3">
-        <img class="card-img" src="{{cardItem?.images?.at(0)}}" >
-        
-        <p class="text-primary  fs-4 m-3"> {{cardItem?.title}}</p>
-        <p class="fs-6">Category: {{cardItem?.category}}</p>
-        <p class="fs-6">Brand: {{cardItem?.brand}}</p>
-
-        @if(cardItem?.stock ==  0 )
-        {
-            <p class="text-white  position-absolute m-1 bg-danger  border-1 rounded-3  fs-6 p-1">out of Stock</p>
-        }
-        @else {
-            <p class="text-white  position-absolute m-1 bg-success border-1 rounded-3  fs-6 p-1">In Stock</p>
-        }
-
-        <app-star-rate [rating]="cardItem?.rating"></app-star-rate>
-
-        <div class="d-flex justify-content-between  align-items-center ">
-            <button class="btn btn-primary" (click)="redirectToItemPage(cardItem!.id)">Details</button>
-            <button class="btn btn-dark  " (click)="addItemtocart(cardItem!.id)">Add To Cart</button>
+    <div class="card">
+        <img src="{{cardItem?.images?.at(0)}}" class="card-img-top" alt="Product Image">
+        <div class="card-body">
+          <h5 class="card-title text-primary ">{{cardItem?.title}}</h5>
+          <p class="card-text">Price: {{cardItem?.price}}</p>
+    
+          <!-- check if the product stock is 0 -->
+          @if(cardItem!.stock == 0 )
+          {
+            <p class="card-text"><span class="badge bg-danger ">Out Of Stock</span></p>
+          }
+          @else{
+            <p class="card-text"><span class="badge bg-success  ">In Stock</span></p>
+          }
+          
+          <app-star-rate [rating]="cardItem?.rating"></app-star-rate>
+    
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button" (click)="addItemtocart(cardItem!.id)">Add to Cart</button>
+            <button class="btn btn-secondary" type="button" (click)="redirectToItemPage(cardItem!.id)">More Details</button>
+          </div>
         </div>
+      </div>
+</div>
 
+
+
+
+
+
+
+  <!-- <div class="card p-3">
+    <img class="card-img" src="{{cardItem?.images?.at(0)}}" >
+    
+    <p class="text-primary  fs-5 m-3"> {{cardItem?.title}}</p>
+    <p class="fs-6">Category: {{cardItem?.category}}</p>
+    <p class="fs-6">Brand: {{cardItem?.brand}}</p>
+
+   check if the product stock is 0
+    @if(cardItem!.stock ===  0 )
+    {
+        <p class="text-white  position-absolute m-1 bg-danger  border-1 rounded-3  fs-6 p-1">out of Stock</p>
+    }
+    @else{
+        <p class="text-white  position-absolute m-1 bg-success border-1 rounded-3  fs-6 p-1">In Stock</p>
+    }
+
+    <app-star-rate [rating]="cardItem?.rating"></app-star-rate>
+
+    <div class="d-flex justify-content-between  align-items-center ">
+        <button class="btn btn-primary" (click)="redirectToItemPage(cardItem!.id)">Details</button>
+        <button class="btn btn-dark  " (click)="addItemtocart(cardItem!.id)">Add To Cart</button>
     </div>
 
-
-
-</div>
+</div> -->
